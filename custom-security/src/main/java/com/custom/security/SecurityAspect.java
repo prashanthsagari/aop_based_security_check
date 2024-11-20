@@ -16,19 +16,16 @@ public class SecurityAspect {
 
 	@Before("@annotation(com.custom.security.annotations.AdminAccess)")
 	public void enforceAdminAccess() {
-		System.out.println("ADMIN ACCESS");
-		securityService.checkRole("ROLE_ADMIN");
+		securityService.checkRole("ADMIN");
 	}
 
 	@Before("@annotation(com.custom.security.annotations.WriteAccess)")
 	public void enforceWriteAccess() {
-		System.out.println("ROLE_WRITE ACCESS");
-		securityService.checkRole("ROLE_WRITE");
+		securityService.checkRole("WRITE");
 	}
 
 	@Before("@annotation(com.custom.security.annotations.ReadAccess)")
 	public void enforceReadAccess() {
-		System.out.println("ROLE_READ ACCESS");
-		securityService.checkRole("ROLE_READ");
+		securityService.checkRole("USER");
 	}
 }
